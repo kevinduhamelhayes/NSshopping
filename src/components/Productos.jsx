@@ -1,23 +1,30 @@
-import { Component } from "react"
-import React from "react"
-import "./productos.css"
-//import Productos from "./components/Productos"
+import { Component } from 'react'
+import Producto from './Producto'
+
+
+const styles = {
+  productos: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  }
+}
 
 class Productos extends Component {
   render() {
     const { productos, agregarAlCarro } = this.props
+
     return (
-      <div className="productos">
-        {productos.map((producto) => (
-          <div className="producto" key={producto.name}>
-            <img src={producto.img} alt={producto.name} />
-            <h3>{producto.name}</h3>
-            <p>{producto.price}</p>
-            <button onClick={agregarAlCarro}>Agregar al carro</button>
-          </div>
-        ))}
+      <div style={styles.productos}>
+        {productos.map(producto =>
+          <Producto
+            agregarAlCarro={agregarAlCarro}
+            key={producto.name}
+            producto={producto}
+          />)}
       </div>
     )
   }
 }
+
 export default Productos

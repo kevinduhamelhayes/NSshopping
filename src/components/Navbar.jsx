@@ -1,32 +1,33 @@
-import React from 'react';
+import { Component } from 'react'
+import Logo from './Logo'
+import Carro from './Carro'
 
-const Navbar = () => {
-  const styles = {
-    navbar: {
-      display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      padding: '10px 20px',
-      backgroundColor: '#333',
-      color: '#fff',
-    },
-    storeName: {
-      fontSize: '24px',
-    },
-    cartIcon: {
-      fontSize: '24px',
-      cursor: 'pointer',
-    }
-  };
-
-  return (
-    <div style={styles.navbar}>
-      <div style={styles.storeName}>Mi Tienda</div>
-      <div style={styles.cartIcon} onClick={() => alert('Carrito clickeado!')}>
-        🛒
-      </div>
-    </div>
-  );
+const styles = {
+  navbar: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    height: '100px',
+    justifyContent: 'space-between',
+    position: 'relative',
+    padding: '0 50px',
+    boxShadow: '0 2px 3px rgb(0,0,0,0.1)'
+  }
+}
+class Navbar extends Component {
+  render() {
+    const { carro, esCarroVisible, mostrarCarro } = this.props
+    return (
+      <nav style={styles.navbar}>
+        <Logo />
+        <Carro
+          carro={carro}
+          esCarroVisible={esCarroVisible}
+          mostrarCarro={mostrarCarro}
+        />
+      </nav>
+    )
+  }
 }
 
-export default Navbar;
+export default Navbar
