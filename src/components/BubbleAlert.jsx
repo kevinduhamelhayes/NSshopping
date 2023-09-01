@@ -5,7 +5,7 @@ const styles = {
     backgroundColor: '#E9725A',
     borderRadius: '15px',
     color: '#fff',
-    padding: '2px 10px',
+    padding: '5px 15px',
     fontSize: '0.9rem',
     width: '20px',
   }

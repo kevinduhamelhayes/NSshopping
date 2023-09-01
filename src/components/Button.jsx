@@ -1,20 +1,19 @@
-import { Component } from 'react'
+import { Component } from "react"
 
 const styles = {
   button: {
-    backgroundColor: '#0A283E',
-    color: '#fff',
-    padding: '15px 20px',
-    border: 'none',
-    borderRadius: '5px',
-    cursor: 'pointer',
-  }
+    backgroundColor: "#4CAF50", // Verde
+    color: "white", // Texto blanco
+    padding: "10px 105px", // Padding alrededor
+    border: "none", // Sin bordes
+    borderRadius: "5px", // Bordes redondeados
+    cursor: "pointer", // Cursor de mano al pasar el ratón
+    fontSize: "20px",
+  },
 }
 class Button extends Component {
   render() {
-    return (
-      <button style={styles.button} {...this.props} />
-    )
+    return <button style={styles.button} {...this.props} />
   }
 }
 

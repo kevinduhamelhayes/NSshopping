@@ -10,6 +10,7 @@ const styles = {
     padding: '15px',
     borderRadius: '15px',
     cursor: 'pointer',
+    fontSize: '1.2em',
   },
   bubble: {
     position: 'relative',
